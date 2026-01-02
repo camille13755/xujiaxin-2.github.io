@@ -1,0 +1,78 @@
+/* 页面基本布局 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* 人物选择部分 */
+section.characters {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.characters ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section.characters ul li {
+    padding: 10px 0;
+}
+
+section.characters ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+section.characters ul li a:hover {
+    color: #007BFF;
+}
+
+/* 人物信息部分 */
+#character-info {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#character-name {
+    font-size: 24px;
+    color: #333;
+}
+
+#character-description {
+    font-size: 18px;
+    color: #555;
+}
+
+/* 对话框 */
+.dialogue {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
