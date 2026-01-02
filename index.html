@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 重建历史人物</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI 重建历史人物</h1>
+        <p>与历史人物进行对话，了解他们的故事和智慧。</p >
+    </header>
+    
+    <section class="characters">
+        <h2>选择一个历史人物：</h2>
+        <ul>
+            <li><a href=" " onclick="showCharacter('孔子')">孔子</a ></li>
+            <li><a href="#napoleon" onclick="showCharacter('拿破仑')">拿破仑</a ></li>
+            <li><a href="#curie" onclick="showCharacter('居里夫人')">居里夫人</a ></li>
+            <li><a href="#galileo" onclick="showCharacter('伽利略')">伽利略</a ></li>
+        </ul>
+    </section>
+    
+    <section id="character-info">
+        <h2 id="character-name">选择人物以查看详情</h2>
+        <p id="character-description">选择一个历史人物了解更多。</p >
+        <div id="character-dialogue" class="dialogue">
+            <h3>与人物对话：</h3>
+            <p id="dialogue"></p >
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AI 重建历史人物 | 所有权归开发者所有</p >
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
