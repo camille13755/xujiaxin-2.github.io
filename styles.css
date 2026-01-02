@@ -1,78 +1,99 @@
-/* 页面基本布局 */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+
+// 用于显示历史人物信息和问题列表
+function showCharacter(character) {
+    let name = document.getElementById('character-name');
+    let description = document.getElementById('character-description');
+    let questionsList = document.getElementById('questions-list');
+    let dialogue = document.getElementById('dialogue');
+
+    // 清空之前的内容
+    name.innerText = '';
+    description.innerText = '';
+    dialogue.innerText = '';
+    questionsList.innerHTML = '';
+
+    // 根据人物选择问题和介绍
+    if (character === '孔子') {
+        name.innerText = '孔子';
+        description.innerText = '孔子（公元前551年—公元前479年），是中国历史上最伟大的教育家、思想家、政治家之一。';
+        
+        // 动态生成问题列表
+        const questions = [
+            { question: '您如何定义“仁”？', answer: '仁者，爱人。仁乃是宽容与敬重他人之心，仁者当行仁事，德行在人，内修其德，外显其行，仁不可少，礼不可废。' },
+            { question: '教育的核心是什么？', answer: '教者，传道、授业、解惑也。为人师表，既要授人以知，亦要教人如何行，求学者应有恭敬之心，尊师重道。' },
+            { question: '您如何看待“礼”与“义”？', answer: '礼者，外敬也；义者，内诚也。礼为外，义为内。治国平天下，必先修其礼，行其义。社会若无礼，必定失其和；若无义，必定失其道。' },
+            { question: '您如何评价当时的社会风气？', answer: '当时的社会缺乏礼仪，百姓间纷争不断。我认为，修身齐家治国平天下，首要之务便是礼，若无礼，则无天下之治。' },
+            { question: '对于今天的年轻人，您有什么教诲？', answer: '年轻人应当多读书，修身养性，明礼诚信，尊敬长辈，行稳致远。只有内修其德，外显其行，才能为社会做出贡献。' },
+        ];
+
+        // 渲染问题到页面
+        questions.forEach(q => {
+            let li = document.createElement('li');
+            li.innerHTML = `<a href=" " onclick="showAnswer('${q.answer}')">${q.question}</a >`;
+            questionsList.appendChild(li);
+        });
+    } else if (character === '拿破仑') {
+        name.innerText = '拿破仑';
+        description.innerText = '拿破仑·波拿巴（1769年—1821年），法国军事统帅和政治家，是法国历史上最杰出的军事人物之一。';
+        
+        const questions = [
+            { question: '您如何评价战略战争？', answer: '战争如棋，谋定而动，兵者，国之大事，生死存亡，不能不慎。战略为胜，战术为辅。每一战场，需以最小代价取得最大胜利。' },
+            { question: '您在军事决策中最重要的原则是什么？', answer: '我最看重的是速度与决断力。战场上，时间就是生命，迅速做出决策，并果断执行是取得胜利的关键。' },
+            { question: '您在成功的背后，最看重的因素是什么？', answer: '坚持与勇气。无论面对多少挑战，持续的努力和信心是制胜法宝。' },
+            { question: '您如何面对失败和挫折？', answer: '失败不过是暂时的，我们的使命是前进，不论遇到多少挫折。胜利从来不是偶然的，失败也从不意味着终结。' },
+            { question: '您认为领导者最重要的品质是什么？', answer: '领导者要具备远见卓识，能够准确判断时局，并能果敢决策，带领团队走向胜利。' },
+        ];
+
+        questions.forEach(q => {
+            let li = document.createElement('li');
+            li.innerHTML = `<a href="#" onclick="showAnswer('${q.answer}')">${q.question}</a >`;
+            questionsList.appendChild(li);
+        });
+    } else if (character === '居里夫人') {
+        name.innerText = '居里夫人';
+        description.innerText = '居里夫人（1867年—1934年），法国物理学家、化学家，曾两次获得诺贝尔奖。';
+        
+        const questions = [
+            { question: '您如何看待科学研究中的困难？', answer: '科学之路，曲折且漫长，每一个成功的背后，都有无数的失败与挫折。然而，正是这些困难，推动了我们的不断前行。' },
+            { question: '您对“勇气”有何定义？', answer: '勇气并非无畏，而是能够面对未知与风险，坚持走下去。科学研究本身就是一场探索未知的过程，需要勇气去接受失败，去迎接挑战。' },
+            { question: '您如何看待科研与日常生活的平衡？', answer: '科研是我生命的核心，但家庭和人际关系也同样重要。成功的科研不仅仅是理论上的突破，还要有实际应用，造福人类。' },
+            { question: '您对科学的探索有何寄语？', answer: '科学需要好奇心与毅力，它没有任何捷径。每一项发现都建立在长期努力的基础上。追求真理的道路永无止境，我们应永远怀抱对知识的渴望。' },
+            { question: '如何看待女性在科学领域的地位？', answer: '科学没有性别之分，知识是世界共同的财富。女性在科学领域的贡献与男性同样重要，值得获得更多的机会和认可。' },
+        ];
+
+        questions.forEach(q => {
+            let li = document.createElement('li');
+            li.innerHTML = `<a href="#" onclick="showAnswer('${q.answer}')">${q.question}</a >`;
+            questionsList.appendChild(li);
+        });
+    } else if (character === '伽利略') {
+        name.innerText = '伽利略';
+        description.innerText = '伽利略（1564年—1642年），意大利物理学家、天文学家，现代科学的奠基人之一。';
+        
+        const questions = [
+            { question: '科学与宗教的冲突是如何影响您的研究的？', answer: '科学的真理不能因权威而屈服。我的责任是发现事实，而不是迎合既定的信仰。我不畏权威，敢于追求真理。' },
+            { question: '您最重要的发现是什么？', answer: '日心说的提出，彻底改变了人类对宇宙的理解。太阳才是宇宙的中心，而非地球。' },
+            { question: '面对挑战，您如何坚持自己的科学信念？', answer: '我始终认为，科学的本质是追求真理，即使面临巨大的压力与挑战，也不能放弃对真理的追求。' },
+            { question: '您如何评价现代科学的发展？', answer: '现代科学的飞跃是前所未有的，尤其在物理学和天文学方面，科技的进步使人类对宇宙的理解不断加深。' },
+            { question: '您对于未来的科学家有什么建议？', answer: '科学需要怀疑精神，需要不断质疑现有的知识，勇敢地探索未知。每个伟大的发现，都是不断挑战自我的结果。' },
+        ];
+
+        questions.forEach(q => {
+            let li = document.createElement('li');
+            li.innerHTML = `<a href="#" onclick="showAnswer('${q.answer}')">${q.question}</a >`;
+            questionsList.appendChild(li);
+        });
+    }
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
+// 显示人物的回答并通过语音读出来
+function showAnswer(answer) {
+    let dialogue = document.getElementById('dialogue');
+    dialogue.innerHTML = `<strong>人物回答：</strong><br>${answer}`;
+
+    // 创建语音播放
+    let utterance = new SpeechSynthesisUtterance(answer);
+    utterance.lang = 'zh-CN'; // 设置语音语言为中文
+    speechSynthesis.speak(utterance); // 播放语音
 }
 
-header h1 {
-    margin: 0;
-}
-
-/* 人物选择部分 */
-section.characters {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section.characters ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-section.characters ul li {
-    padding: 10px 0;
-}
-
-section.characters ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-section.characters ul li a:hover {
-    color: #007BFF;
-}
-
-/* 人物信息部分 */
-#character-info {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#character-name {
-    font-size: 24px;
-    color: #333;
-}
-
-#character-description {
-    font-size: 18px;
-    color: #555;
-}
-
-/* 对话框 */
-.dialogue {
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
